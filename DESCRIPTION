@@ -2,10 +2,10 @@ Package: TSLSTMplus
 Title: Long Short Term Memory (LSTM) Model for Time Series Forecasting, with upgraded UI
 Version: 1.0.0
 Authors@R: c(
-	person(given = "Antonio", family = "Muñoz San Roque",
-      email = "antonio.munoz@iit.comillas.edu", role = "aut"),
     person(given = "Jaime", family = "Pizarroso Gonzalo",
-      email = "jpizarroso@comillas.edu", role = c("aut","ctb", "cre"))
+      email = "jpizarroso@comillas.edu", role = c("aut","ctb", "cre")),
+	person(given = "Antonio", family = "Muñoz San Roque",
+      email = "antonio.munoz@iit.comillas.edu", role = "aut")
     )
 Author: Jaime Pizarroso Gonzalo [aut, ctb, cre], Antonio Muñoz San Roque [aut]
 Maintainer: Jaime Pizarroso Gonzalo <jpizarroso@comillas.edu>
