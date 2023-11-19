@@ -1,2 +1,13 @@
 ^TSLSTMplus\.Rproj$
 ^\.Rproj\.user$
+^revdep$
+cran-comments.md
+README.md
+README.Rmd
+README.html
+^README_files/.*
+^appveyor\.yml$
+^CRAN-RELEASE$
+^CRAN-SUBMISSION$
+LICENSE
+^\.github$

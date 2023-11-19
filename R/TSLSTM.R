@@ -319,18 +319,21 @@ LSTMModel <- function(lstm_model,
 #' @examples
 #' \donttest{
 #'   y<-rnorm(100,mean=100,sd=50)
-#'   x1<-rnorm(100,mean=50,sd=50)
-#'   x2<-rnorm(100, mean=50, sd=25)
+#'   x1<-rnorm(150,mean=50,sd=50)
+#'   x2<-rnorm(150, mean=50, sd=25)
 #'   x<-cbind(x1,x2)
+#'   x.tr <- x[1:100,]
+#'   x.ts <- x[101:150,]
 #'   TSLSTM<-ts.lstm(ts=y,
-#'                   xreg = x,
+#'                   xreg = x.tr,
 #'                   tsLag=2,
 #'                   xregLag = 0,
 #'                   LSTMUnits=5,
 #'                   ScaleInput = 'scale',
 #'                   ScaleOutput = 'scale',
 #'                   Epochs=2)
-#'   future_values <- predict(TSLSTM, xreg = x, ts = y)
+#'   current_values <- predict(TSLSTM, xreg = x.tr, ts = y)
+#'   future_values <- predict(TSLSTM, horizon=50, xreg = x, ts = y, xreg.new = x.ts)
 #' }
 #' @importFrom utils tail
 #' @importFrom utils capture.output
