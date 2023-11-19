@@ -76,13 +76,13 @@ ts.prepare.data <- function(ts,
 #' @param EarlyStopping EarlyStopping according to keras
 #'
 #' @import keras tensorflow tsutils stats
-#' @importFrom reticulate virtualenv_create
+#' @importFrom reticulate install_python
 #' @return LSTMmodel object
 #' @export
 #'
 #' @examples
 #' \donttest{
-#'   virtualenv_create("3.11.5")
+#'   install_python("3.11.5")
 #'   y<-rnorm(100,mean=100,sd=50)
 #'   x1<-rnorm(100,mean=50,sd=50)
 #'   x2<-rnorm(100, mean=50, sd=25)
@@ -262,11 +262,11 @@ ts.lstm <- function(ts,
 #' @param xregLag Lag of exogenous variables
 #' @param model_structure Summary of the LSTM model previous to training
 #' @return LSTMModel object
-#' @importFrom reticulate virtualenv_create
+#' @importFrom reticulate install_python
 #' @export
 #' @examples
 #' \donttest{
-#'   virtualenv_create("3.11.5")
+#'   install_python("3.11.5")
 #'   y<-rnorm(100,mean=100,sd=50)
 #'   x1<-rnorm(100,mean=50,sd=50)
 #'   x2<-rnorm(100, mean=50, sd=25)
@@ -318,10 +318,10 @@ LSTMModel <- function(lstm_model,
 #' @param BatchSize Batch size to use during training
 #' @param ... Optional arguments, no use is contemplated right now
 #' @return A vector containing the forecasted values for the specified horizon.
-#' @importFrom reticulate virtualenv_create
+#' @importFrom reticulate install_python
 #' @examples
 #' \donttest{
-#'   virtualenv_create("3.11.5")
+#'   install_python("3.11.5")
 #'   y<-rnorm(100,mean=100,sd=50)
 #'   x1<-rnorm(150,mean=50,sd=50)
 #'   x2<-rnorm(150, mean=50, sd=25)
@@ -495,7 +495,7 @@ predict.LSTMModel <-  function(object,
 #' @importFrom reticulate install_python
 #' @examples
 #' \donttest{
-#'   virtualenv_create("3.11.5")
+#'   install_python("3.11.5")
 #'   y<-rnorm(100,mean=100,sd=50)
 #'   x1<-rnorm(100,mean=50,sd=50)
 #'   x2<-rnorm(100, mean=50, sd=25)
