@@ -67,7 +67,7 @@ ts.lstm(
 
 \item{RandomState}{seed for replication}
 
-\item{EarlyStopping}{EarlyStopping according to [keras](https://www.rdocumentation.org/packages/kerasR/versions/0.8.1/topics/EarlyStopping)}
+\item{EarlyStopping}{EarlyStopping according to keras}
 }
 \value{
 LSTMmodel object

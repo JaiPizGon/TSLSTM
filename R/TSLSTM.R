@@ -73,7 +73,7 @@ ts.prepare.data <- function(ts,
 #' @param ValidationSplit Validation split ration
 #' @param verbose Indicate how much information is given during training. Accepted values, 0, 1 or 2.
 #' @param RandomState seed for replication
-#' @param EarlyStopping EarlyStopping according to [keras](https://www.rdocumentation.org/packages/kerasR/versions/0.8.1/topics/EarlyStopping)
+#' @param EarlyStopping EarlyStopping according to keras
 #'
 #' @import keras tensorflow tsutils stats
 #' @return LSTMmodel object
@@ -250,7 +250,7 @@ ts.lstm <- function(ts,
 }
 
 #' @title LSTMModel class
-#' @description LSTMModel class ot use in the practices
+#' @description LSTMModel class for further use in predict function
 #' @param lstm_model LSTM keras model
 #' @param scale_output indicate which type of scaler is used in the output
 #' @param scaler_output Scaler of output variable (and lags)

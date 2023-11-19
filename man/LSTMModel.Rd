@@ -36,7 +36,7 @@ LSTMModel(
 LSTMModel object
 }
 \description{
-LSTMModel class ot use in the practices
+LSTMModel class for further use in predict function
 }
 \examples{
 \donttest{

@@ -9,9 +9,10 @@ Authors@R: c(
     )
 Author: Jaime Pizarroso Gonzalo [aut, ctb, cre], Antonio Muñoz San Roque [aut]
 Maintainer: Jaime Pizarroso Gonzalo <jpizarroso@comillas.edu>
-Description: The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Customizable configurations for the model is allowed, improving the capabilities and usability of this model compared to other packages. This package is based on Keras and TensorFlow modules and the algorithm of Paul and Garai (2021) <doi:10.1007/s00500-021-06087-4>.
+Description: The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Customizable configurations for the model are allowed, improving the capabilities and usability of this model compared to other packages. This package is based on Keras and TensorFlow modules and the algorithm of Paul and Garai (2021) <doi:10.1007/s00500-021-06087-4>.
 License: GPL-3
 Encoding: UTF-8
 Imports: keras, tensorflow, tsutils, stats
 NeedsCompilation: no
 RoxygenNote: 7.2.3
+Date: 2023-11-19
