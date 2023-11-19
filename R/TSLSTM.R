@@ -114,16 +114,16 @@ ts.lstm <- function(ts,
                     DenseActivationFn = 'relu',
                     ValidationSplit = 0.1,
                     verbose=2,
-                    RandomState=150,
+                    RandomState=NULL,
                     EarlyStopping=EarlyStopping(monitor = "val_loss",
                                                 min_delta = 0,
                                                 patience = 3,
                                                 verbose = 0,
                                                 mode = "auto")
                     ) {
-
-  set_random_seed(RandomState)
-
+  if (!is.null(RandomState)) {
+    set_random_seed(RandomState)
+  }
   ## Check the option for scalers
   ScaleOutput <- match.arg(ScaleOutput)
   ScaleInputs <- match.arg(ScaleInput)
