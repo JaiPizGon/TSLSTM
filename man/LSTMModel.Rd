@@ -40,7 +40,7 @@ LSTMModel class for further use in predict function
 }
 \examples{
 \donttest{
-  install_python("3.11.5")
+if (keras::is_keras_available()){
   y<-rnorm(100,mean=100,sd=50)
   x1<-rnorm(100,mean=50,sd=50)
   x2<-rnorm(100, mean=50, sd=25)
@@ -53,6 +53,7 @@ LSTMModel class for further use in predict function
                   ScaleInput = 'scale',
                   ScaleOutput = 'scale',
                   Epochs=2)
+}
 }
 }
 \references{

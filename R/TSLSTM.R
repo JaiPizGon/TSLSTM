@@ -74,27 +74,25 @@ ts.prepare.data <- function(ts,
 #' @param verbose Indicate how much information is given during training. Accepted values, 0, 1 or 2.
 #' @param RandomState seed for replication
 #' @param EarlyStopping EarlyStopping according to keras
-#'
 #' @import keras tensorflow tsutils stats
-#' @importFrom reticulate install_python
 #' @return LSTMmodel object
 #' @export
-#'
 #' @examples
 #' \donttest{
-#'   install_python("3.11.5")
-#'   y<-rnorm(100,mean=100,sd=50)
-#'   x1<-rnorm(100,mean=50,sd=50)
-#'   x2<-rnorm(100, mean=50, sd=25)
-#'   x<-cbind(x1,x2)
-#'   TSLSTM<-ts.lstm(ts=y,
-#'                   xreg = x,
-#'                   tsLag=2,
-#'                   xregLag = 0,
-#'                   LSTMUnits=5,
-#'                   ScaleInput = 'scale',
-#'                   ScaleOutput = 'scale',
-#'                   Epochs=2)
+#'   if (keras::is_keras_available()){
+#'       y<-rnorm(100,mean=100,sd=50)
+#'       x1<-rnorm(100,mean=50,sd=50)
+#'       x2<-rnorm(100, mean=50, sd=25)
+#'       x<-cbind(x1,x2)
+#'       TSLSTM<-ts.lstm(ts=y,
+#'                       xreg = x,
+#'                       tsLag=2,
+#'                       xregLag = 0,
+#'                       LSTMUnits=5,
+#'                       ScaleInput = 'scale',
+#'                       ScaleOutput = 'scale',
+#'                       Epochs=2)
+#'   }
 #' }
 #' @references
 #' Paul, R.K. and Garai, S. (2021). Performance comparison of wavelets-based machine learning technique for forecasting agricultural commodity prices, Soft Computing, 25(20), 12857-12873
@@ -262,11 +260,10 @@ ts.lstm <- function(ts,
 #' @param xregLag Lag of exogenous variables
 #' @param model_structure Summary of the LSTM model previous to training
 #' @return LSTMModel object
-#' @importFrom reticulate install_python
 #' @export
 #' @examples
 #' \donttest{
-#'   install_python("3.11.5")
+#' if (keras::is_keras_available()){
 #'   y<-rnorm(100,mean=100,sd=50)
 #'   x1<-rnorm(100,mean=50,sd=50)
 #'   x2<-rnorm(100, mean=50, sd=25)
@@ -279,6 +276,7 @@ ts.lstm <- function(ts,
 #'                   ScaleInput = 'scale',
 #'                   ScaleOutput = 'scale',
 #'                   Epochs=2)
+#' }
 #' }
 #' @references
 #' Paul, R.K. and Garai, S. (2021). Performance comparison of wavelets-based machine learning technique for forecasting agricultural commodity prices, Soft Computing, 25(20), 12857-12873
@@ -318,26 +316,26 @@ LSTMModel <- function(lstm_model,
 #' @param BatchSize Batch size to use during training
 #' @param ... Optional arguments, no use is contemplated right now
 #' @return A vector containing the forecasted values for the specified horizon.
-#' @importFrom reticulate install_python
 #' @examples
 #' \donttest{
-#'   install_python("3.11.5")
-#'   y<-rnorm(100,mean=100,sd=50)
-#'   x1<-rnorm(150,mean=50,sd=50)
-#'   x2<-rnorm(150, mean=50, sd=25)
-#'   x<-cbind(x1,x2)
-#'   x.tr <- x[1:100,]
-#'   x.ts <- x[101:150,]
-#'   TSLSTM<-ts.lstm(ts=y,
-#'                   xreg = x.tr,
-#'                   tsLag=2,
-#'                   xregLag = 0,
-#'                   LSTMUnits=5,
-#'                   ScaleInput = 'scale',
-#'                   ScaleOutput = 'scale',
-#'                   Epochs=2)
-#'   current_values <- predict(TSLSTM, xreg = x.tr, ts = y)
-#'   future_values <- predict(TSLSTM, horizon=50, xreg = x, ts = y, xreg.new = x.ts)
+#'   if (keras::is_keras_available()){
+#'       y<-rnorm(100,mean=100,sd=50)
+#'       x1<-rnorm(150,mean=50,sd=50)
+#'       x2<-rnorm(150, mean=50, sd=25)
+#'       x<-cbind(x1,x2)
+#'       x.tr <- x[1:100,]
+#'       x.ts <- x[101:150,]
+#'       TSLSTM<-ts.lstm(ts=y,
+#'                       xreg = x.tr,
+#'                       tsLag=2,
+#'                       xregLag = 0,
+#'                       LSTMUnits=5,
+#'                       ScaleInput = 'scale',
+#'                       ScaleOutput = 'scale',
+#'                       Epochs=2)
+#'       current_values <- predict(TSLSTM, xreg = x.tr, ts = y)
+#'       future_values <- predict(TSLSTM, horizon=50, xreg = x, ts = y, xreg.new = x.ts)
+#'    }
 #' }
 #' @importFrom utils tail
 #' @importFrom utils capture.output
@@ -493,23 +491,25 @@ predict.LSTMModel <-  function(object,
 #' @param ... Optional arguments, no use is contemplated right now
 #' @return A vector containing the forecasted values for the specified horizon.
 #' @importFrom reticulate install_python
+#' @importFrom reticulate virtualenv_create
 #' @examples
 #' \donttest{
-#'   install_python("3.11.5")
-#'   y<-rnorm(100,mean=100,sd=50)
-#'   x1<-rnorm(100,mean=50,sd=50)
-#'   x2<-rnorm(100, mean=50, sd=25)
-#'   x<-cbind(x1,x2)
-#'   TSLSTM<-ts.lstm(ts=y,
-#'                   xreg = x,
-#'                   tsLag=2,
-#'                   xregLag = 0,
-#'                   LSTMUnits=5,
-#'                   ScaleInput = 'scale',
-#'                   ScaleOutput = 'scale',
-#'                   Epochs=2)
-#'   # Assuming TSLSTM is an LSTMModel object created using ts.lstm function
-#'   summary(TSLSTM)
+#'   if (keras::is_keras_available()){
+#'       y<-rnorm(100,mean=100,sd=50)
+#'       x1<-rnorm(100,mean=50,sd=50)
+#'       x2<-rnorm(100, mean=50, sd=25)
+#'       x<-cbind(x1,x2)
+#'       TSLSTM<-ts.lstm(ts=y,
+#'                       xreg = x,
+#'                       tsLag=2,
+#'                       xregLag = 0,
+#'                       LSTMUnits=5,
+#'                       ScaleInput = 'scale',
+#'                       ScaleOutput = 'scale',
+#'                       Epochs=2)
+#'       # Assuming TSLSTM is an LSTMModel object created using ts.lstm function
+#'       summary(TSLSTM)
+#'   }
 #' }
 #'
 #' @export

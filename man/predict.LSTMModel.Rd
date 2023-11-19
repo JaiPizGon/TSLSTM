@@ -37,22 +37,23 @@ This function makes predictions using a trained LSTM model for time series forec
 }
 \examples{
 \donttest{
-  install_python("3.11.5")
-  y<-rnorm(100,mean=100,sd=50)
-  x1<-rnorm(150,mean=50,sd=50)
-  x2<-rnorm(150, mean=50, sd=25)
-  x<-cbind(x1,x2)
-  x.tr <- x[1:100,]
-  x.ts <- x[101:150,]
-  TSLSTM<-ts.lstm(ts=y,
-                  xreg = x.tr,
-                  tsLag=2,
-                  xregLag = 0,
-                  LSTMUnits=5,
-                  ScaleInput = 'scale',
-                  ScaleOutput = 'scale',
-                  Epochs=2)
-  current_values <- predict(TSLSTM, xreg = x.tr, ts = y)
-  future_values <- predict(TSLSTM, horizon=50, xreg = x, ts = y, xreg.new = x.ts)
+  if (keras::is_keras_available()){
+      y<-rnorm(100,mean=100,sd=50)
+      x1<-rnorm(150,mean=50,sd=50)
+      x2<-rnorm(150, mean=50, sd=25)
+      x<-cbind(x1,x2)
+      x.tr <- x[1:100,]
+      x.ts <- x[101:150,]
+      TSLSTM<-ts.lstm(ts=y,
+                      xreg = x.tr,
+                      tsLag=2,
+                      xregLag = 0,
+                      LSTMUnits=5,
+                      ScaleInput = 'scale',
+                      ScaleOutput = 'scale',
+                      Epochs=2)
+      current_values <- predict(TSLSTM, xreg = x.tr, ts = y)
+      future_values <- predict(TSLSTM, horizon=50, xreg = x, ts = y, xreg.new = x.ts)
+   }
 }
 }

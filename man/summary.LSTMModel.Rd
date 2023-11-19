@@ -19,21 +19,22 @@ This function generates the summary of the LSTM model.
 }
 \examples{
 \donttest{
-  install_python("3.11.5")
-  y<-rnorm(100,mean=100,sd=50)
-  x1<-rnorm(100,mean=50,sd=50)
-  x2<-rnorm(100, mean=50, sd=25)
-  x<-cbind(x1,x2)
-  TSLSTM<-ts.lstm(ts=y,
-                  xreg = x,
-                  tsLag=2,
-                  xregLag = 0,
-                  LSTMUnits=5,
-                  ScaleInput = 'scale',
-                  ScaleOutput = 'scale',
-                  Epochs=2)
-  # Assuming TSLSTM is an LSTMModel object created using ts.lstm function
-  summary(TSLSTM)
+  if (keras::is_keras_available()){
+      y<-rnorm(100,mean=100,sd=50)
+      x1<-rnorm(100,mean=50,sd=50)
+      x2<-rnorm(100, mean=50, sd=25)
+      x<-cbind(x1,x2)
+      TSLSTM<-ts.lstm(ts=y,
+                      xreg = x,
+                      tsLag=2,
+                      xregLag = 0,
+                      LSTMUnits=5,
+                      ScaleInput = 'scale',
+                      ScaleOutput = 'scale',
+                      Epochs=2)
+      # Assuming TSLSTM is an LSTMModel object created using ts.lstm function
+      summary(TSLSTM)
+  }
 }
 
 }

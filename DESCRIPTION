@@ -1,5 +1,5 @@
 Package: TSLSTMplus
-Title: Long Short Term Memory (LSTM) Model for Time Series Forecasting, with upgraded UI
+Title: Long Short Term Memory (LSTM) Model for Time Series Forecasting, with Upgraded UI
 Version: 1.0.0
 Authors@R: c(
     person(given = "Jaime", family = "Pizarroso Gonzalo",
