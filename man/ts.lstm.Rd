@@ -49,7 +49,7 @@ ts.lstm(
 
 \item{CompMetrics}{Metrics}
 
-\item{Optimizer}{Keras optimizer}
+\item{Optimizer}{'keras' optimizer}
 
 \item{ScaleOutput}{Flag to indicate if ts shall be scaled before training}
 
@@ -67,13 +67,13 @@ ts.lstm(
 
 \item{RandomState}{seed for replication}
 
-\item{EarlyStopping}{EarlyStopping according to keras}
+\item{EarlyStopping}{EarlyStopping according to 'keras'}
 }
 \value{
 LSTMmodel object
 }
 \description{
-The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Min-Max transformation has been used for data preparation. Here, we have used one LSTM layer as a simple LSTM model and a Dense layer is used as the output layer. Then, compile the model using the loss function, optimizer and metrics. This package is based on Keras and TensorFlow modules.
+The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Min-Max transformation has been used for data preparation. Here, we have used one LSTM layer as a simple LSTM model and a Dense layer is used as the output layer. Then, compile the model using the loss function, optimizer and metrics. This package is based on 'keras' and TensorFlow modules.
 }
 \examples{
 \donttest{

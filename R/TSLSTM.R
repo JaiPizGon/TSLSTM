@@ -4,7 +4,7 @@ library(tsutils)
 library(stats)
 
 #' @title Prepare data for Long Short Term Memory (LSTM) Model for Time Series Forecasting
-#' @description The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Min-Max transformation has been used for data preparation. Here, we have used one LSTM layer as a simple LSTM model and a Dense layer is used as the output layer. Then, compile the model using the loss function, optimizer and metrics. This package is based on Keras and TensorFlow modules.
+#' @description The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Min-Max transformation has been used for data preparation. Here, we have used one LSTM layer as a simple LSTM model and a Dense layer is used as the output layer. Then, compile the model using the loss function, optimizer and metrics. This package is based on 'keras' and TensorFlow modules.
 #' @param ts Time series data
 #' @param xreg Exogenous variables
 #' @param tsLag Lag of time series data
@@ -53,7 +53,7 @@ ts.prepare.data <- function(ts,
 }
 
 #' @title Long Short Term Memory (LSTM) Model for Time Series Forecasting
-#' @description The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Min-Max transformation has been used for data preparation. Here, we have used one LSTM layer as a simple LSTM model and a Dense layer is used as the output layer. Then, compile the model using the loss function, optimizer and metrics. This package is based on Keras and TensorFlow modules.
+#' @description The LSTM (Long Short-Term Memory) model is a Recurrent Neural Network (RNN) based architecture that is widely used for time series forecasting. Min-Max transformation has been used for data preparation. Here, we have used one LSTM layer as a simple LSTM model and a Dense layer is used as the output layer. Then, compile the model using the loss function, optimizer and metrics. This package is based on 'keras' and TensorFlow modules.
 #' @param ts Time series data
 #' @param xreg Exogenous variables
 #' @param tsLag Lag of time series data
@@ -64,7 +64,7 @@ ts.prepare.data <- function(ts,
 #' @param Epochs Number of epochs
 #' @param CompLoss Loss function
 #' @param CompMetrics Metrics
-#' @param Optimizer Keras optimizer
+#' @param Optimizer 'keras' optimizer
 #' @param ScaleOutput Flag to indicate if ts shall be scaled before training
 #' @param ScaleInput Flag to indicate if xreg shall be scaled before training
 #' @param BatchSize Batch size to use during training
@@ -73,7 +73,7 @@ ts.prepare.data <- function(ts,
 #' @param ValidationSplit Validation split ration
 #' @param verbose Indicate how much information is given during training. Accepted values, 0, 1 or 2.
 #' @param RandomState seed for replication
-#' @param EarlyStopping EarlyStopping according to keras
+#' @param EarlyStopping EarlyStopping according to 'keras'
 #' @import keras tensorflow tsutils stats
 #' @return LSTMmodel object
 #' @export
@@ -251,7 +251,7 @@ ts.lstm <- function(ts,
 
 #' @title LSTMModel class
 #' @description LSTMModel class for further use in predict function
-#' @param lstm_model LSTM keras model
+#' @param lstm_model LSTM 'keras' model
 #' @param scale_output indicate which type of scaler is used in the output
 #' @param scaler_output Scaler of output variable (and lags)
 #' @param scale_input indicate which type of scaler is used in the input(s)
@@ -490,8 +490,6 @@ predict.LSTMModel <-  function(object,
 #' @param object An LSTMModel object containing a trained LSTM model along with normalization parameters and lag values.
 #' @param ... Optional arguments, no use is contemplated right now
 #' @return A vector containing the forecasted values for the specified horizon.
-#' @importFrom reticulate install_python
-#' @importFrom reticulate virtualenv_create
 #' @examples
 #' \donttest{
 #'   if (keras::is_keras_available()){

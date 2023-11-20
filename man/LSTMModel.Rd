@@ -16,7 +16,7 @@ LSTMModel(
 )
 }
 \arguments{
-\item{lstm_model}{LSTM keras model}
+\item{lstm_model}{LSTM 'keras' model}
 
 \item{scale_output}{indicate which type of scaler is used in the output}
 

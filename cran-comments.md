@@ -1,5 +1,14 @@
 # cran-comments.md
 
+## Reviewer comments
+
+- **Please reduce the length of the title to less than 65 characters.**
+Title has been reduced to 60 characters
+
+- **Please always write package names, software names and API (application programming interface) names in single quotes in title and description. e.g: --> 'keras', 'tensorflow'. Please note that package names are case sensitive.**
+
+All packages names in the title, description and documentation has been changed to single quotes. Case has also been reviewed.
+
 ## Contribution and Novelty
 TSLSTMplus is an enhancement of the existing TSLSTM package, offering advanced features and an improved user interface for LSTM models in R. It addresses several limitations of the original TSLSTM package by providing:
 
