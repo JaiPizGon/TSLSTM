@@ -1,22 +1,11 @@
 # cran-comments.md
 
-## Reviewer comments
+## Version 1.0.1
+Feature:
+- Allows to assign different lags to each exogenous variable.
 
-- **Please reduce the length of the title to less than 65 characters.**
-Title has been reduced to 60 characters
-
-- **Please always write package names, software names and API (application programming interface) names in single quotes in title and description. e.g: --> 'keras', 'tensorflow'. Please note that package names are case sensitive.**
-
-All packages names in the title, description and documentation has been changed to single quotes. Case has also been reviewed.
-
-## Contribution and Novelty
-TSLSTMplus is an enhancement of the existing TSLSTM package, offering advanced features and an improved user interface for LSTM models in R. It addresses several limitations of the original TSLSTM package by providing:
-
-- A more intuitive and user-friendly interface for model training and prediction.
-- Additional customization options, including a choice of activation functions and various Keras optimizers.
-- Improved scaling functionalities for both input and output data.
-- Enhanced validation split capabilities, fixing issues present in the original package.
-- Prediction of new data points not used during training.
+Bugfix:
+- Solve bug of needed xreg.new when no xreg was used during training.
 
 ## donttest{} examples
 
