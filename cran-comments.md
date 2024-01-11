@@ -1,11 +1,9 @@
 # cran-comments.md
 
-## Version 1.0.1
-Feature:
-- Allows to assign different lags to each exogenous variable.
+## Version 1.0.2
 
 Bugfix:
-- Solve bug of needed xreg.new when no xreg was used during training.
+- Solve bug of predicting future value that predicts an extra sample.
 
 ## donttest{} examples
 
