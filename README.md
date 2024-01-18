@@ -3,12 +3,15 @@
 ## Overview
 TSLSTMplus is an enhanced R package for time series forecasting using Long Short-Term Memory (LSTM) models. Building upon the foundation of the TSLSTM package, TSLSTMplus introduces improved user interface (UI) elements and additional functionalities to streamline the process of modeling and forecasting with LSTM networks in R.
 
-## Features
-- User-friendly interface for working with LSTM models
-- Enhanced visualization tools for model analysis
-- [List other features here]
+[![CRAN status](https://www.r-pkg.org/badges/version/TSLSTMplus)](https://CRAN.R-project.org/package=TSLSTMplus)
+[![CRAN_Download_Badge](https://cranlogs.r-pkg.org/badges/grand-total/TSLSTMplus)](https://cranlogs.r-pkg.org/badges/grand-total/TSLSTMplus)
 
 ## Installation
+You can install the last stable version of TSLSTMplus from CRAN with:
+```R
+install.packages("TSLSTMplus")
+```
+
 You can install the development version of TSLSTMplus from GitHub with:
 
 ```R
