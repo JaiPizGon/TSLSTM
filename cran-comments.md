@@ -1,9 +1,10 @@
 # cran-comments.md
 
-## Version 1.0.2
+## Version 1.0.4
 
 Bugfix:
-- Solve bug of predicting future value that predicts an extra sample.
+- Solve bug if not using xreg
+- Solve bug if not using EarlyStopping
 
 ## donttest{} examples
 
