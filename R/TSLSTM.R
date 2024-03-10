@@ -556,7 +556,7 @@ predict.LSTMModel <-  function(object,
 
     # Data Array Preparation for LSTM
     if (!is.null(xreg)){
-      feature <- ifelse(is.null(dim(xreg)), ncol(xreg), dim(xreg)[2]) + ifelse(is.null(object$tsLag), 1, 0)
+      feature <- ifelse(is.null(dim(xreg)), ncol(xreg), dim(xreg)[2]) + ifelse(is.null(object$tsLag), 0, 1)
     } else {
       feature <- 1
     }
@@ -666,7 +666,7 @@ predict.LSTMModel <-  function(object,
     } else {
       # Data Array Preparation for LSTM
       if (!is.null(xreg)){
-        feature <- ifelse(is.null(dim(xreg)), ncol(xreg), dim(xreg)[2]) + ifelse(is.null(object$tsLag), 1, 0)
+        feature <- ifelse(is.null(dim(xreg)), ncol(xreg), dim(xreg)[2]) + ifelse(is.null(object$tsLag), 0, 1)
       } else {
         feature <- 1
       }
